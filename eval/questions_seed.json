@@ -1,0 +1,122 @@
+[
+  {
+    "id": "q001",
+    "question": "What public datasets exist for NSCLC?",
+    "expected_dataset_ids": ["gdc:TCGA-LUAD", "gdc:TCGA-LUSC"],
+    "expected_sources": ["GDC"],
+    "expected_keywords": ["NSCLC", "LUAD", "LUSC", "lung"],
+    "answer_checks": [
+      "mentions relevant dataset IDs",
+      "explains why LUAD and LUSC are relevant to NSCLC",
+      "does not provide medical advice"
+    ]
+  },
+  {
+    "id": "q002",
+    "question": "Which public datasets are available for lung adenocarcinoma?",
+    "expected_dataset_ids": ["gdc:TCGA-LUAD"],
+    "expected_sources": ["GDC"],
+    "expected_keywords": ["lung adenocarcinoma", "LUAD"],
+    "answer_checks": [
+      "mentions TCGA-LUAD or another LUAD-relevant dataset",
+      "states the source",
+      "mentions relevant data availability if known"
+    ]
+  },
+  {
+    "id": "q003",
+    "question": "Which datasets are available for lung squamous cell carcinoma?",
+    "expected_dataset_ids": ["gdc:TCGA-LUSC"],
+    "expected_sources": ["GDC"],
+    "expected_keywords": ["lung squamous cell carcinoma", "LUSC"],
+    "answer_checks": [
+      "mentions TCGA-LUSC or another LUSC-relevant dataset",
+      "states the source",
+      "mentions limitations if metadata is incomplete"
+    ]
+  },
+  {
+    "id": "q004",
+    "question": "Compare TCGA-LUAD and TCGA-LUSC.",
+    "expected_dataset_ids": ["gdc:TCGA-LUAD", "gdc:TCGA-LUSC"],
+    "expected_sources": ["GDC"],
+    "expected_keywords": ["LUAD", "LUSC", "lung", "compare"],
+    "answer_checks": [
+      "mentions both datasets",
+      "explains the cancer type difference",
+      "compares available data types if known"
+    ]
+  },
+  {
+    "id": "q005",
+    "question": "Which datasets contain RNA-seq data for lung cancer?",
+    "expected_dataset_ids": ["gdc:TCGA-LUAD", "gdc:TCGA-LUSC"],
+    "expected_sources": ["GDC"],
+    "expected_keywords": ["RNA-seq", "lung cancer", "expression"],
+    "answer_checks": [
+      "mentions RNA-seq or expression availability",
+      "names candidate lung cancer datasets",
+      "does not claim raw analysis was performed"
+    ]
+  },
+  {
+    "id": "q006",
+    "question": "Which datasets can support EGFR mutation research?",
+    "expected_dataset_ids": ["gdc:TCGA-LUAD", "gdc:TCGA-LUSC"],
+    "expected_sources": ["GDC"],
+    "expected_keywords": ["EGFR", "mutation", "lung"],
+    "answer_checks": [
+      "labels datasets as candidates if EGFR-specific evidence is not explicit",
+      "mentions mutation data availability",
+      "includes limitations"
+    ]
+  },
+  {
+    "id": "q007",
+    "question": "Which datasets can support KRAS mutation research?",
+    "expected_dataset_ids": ["gdc:TCGA-LUAD", "gdc:TCGA-LUSC"],
+    "expected_sources": ["GDC"],
+    "expected_keywords": ["KRAS", "mutation", "lung"],
+    "answer_checks": [
+      "labels datasets as candidates if KRAS-specific evidence is not explicit",
+      "mentions mutation data availability",
+      "includes limitations"
+    ]
+  },
+  {
+    "id": "q008",
+    "question": "What datasets are available for KRAS G12C research in NSCLC?",
+    "expected_dataset_ids": ["gdc:TCGA-LUAD", "gdc:TCGA-LUSC"],
+    "expected_sources": ["GDC"],
+    "expected_keywords": ["KRAS G12C", "NSCLC", "mutation", "lung"],
+    "answer_checks": [
+      "returns candidate datasets if explicit KRAS G12C evidence is unavailable",
+      "labels uncertainty",
+      "does not claim confirmed KRAS G12C-positive cases unless evidence supports it"
+    ]
+  },
+  {
+    "id": "q009",
+    "question": "Which datasets include both clinical metadata and molecular data?",
+    "expected_dataset_ids": ["gdc:TCGA-LUAD", "gdc:TCGA-LUSC"],
+    "expected_sources": ["GDC"],
+    "expected_keywords": ["clinical", "molecular", "mutation", "RNA-seq"],
+    "answer_checks": [
+      "mentions clinical and molecular data availability",
+      "names candidate datasets",
+      "states limitations if exact clinical attributes are not verified"
+    ]
+  },
+  {
+    "id": "q010",
+    "question": "Which cBioPortal studies are relevant to NSCLC?",
+    "expected_dataset_ids": [],
+    "expected_sources": ["cBioPortal"],
+    "expected_keywords": ["cBioPortal", "NSCLC", "lung"],
+    "answer_checks": [
+      "returns cBioPortal studies after seed catalog includes them",
+      "states if no cBioPortal records are currently loaded",
+      "does not substitute unrelated GDC-only results without explanation"
+    ]
+  }
+]
