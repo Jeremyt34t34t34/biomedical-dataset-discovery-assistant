@@ -110,13 +110,43 @@
   {
     "id": "q010",
     "question": "Which cBioPortal studies are relevant to NSCLC?",
-    "expected_dataset_ids": [],
+    "expected_dataset_ids": [
+      "cbioportal:luad_tcga_pan_can_atlas_2018",
+      "cbioportal:lusc_tcga_pan_can_atlas_2018"
+    ],
     "expected_sources": ["cBioPortal"],
     "expected_keywords": ["cBioPortal", "NSCLC", "lung"],
     "answer_checks": [
       "returns cBioPortal studies after seed catalog includes them",
       "states if no cBioPortal records are currently loaded",
       "does not substitute unrelated GDC-only results without explanation"
+    ]
+  },
+  {
+    "id": "q011",
+    "question": "Which cBioPortal studies provide mutation profiles for LUAD?",
+    "expected_dataset_ids": ["cbioportal:luad_tcga_pan_can_atlas_2018"],
+    "expected_sources": ["cBioPortal"],
+    "expected_keywords": ["cBioPortal", "LUAD", "mutation"],
+    "answer_checks": [
+      "returns the cBioPortal LUAD study",
+      "mentions mutation or molecular profile availability",
+      "does not return only the GDC project view"
+    ]
+  },
+  {
+    "id": "q012",
+    "question": "Which breast cancer comparison datasets are currently in the catalog?",
+    "expected_dataset_ids": [
+      "gdc:TCGA-BRCA",
+      "cbioportal:brca_tcga_pan_can_atlas_2018"
+    ],
+    "expected_sources": ["GDC", "cBioPortal"],
+    "expected_keywords": ["breast cancer", "BRCA"],
+    "answer_checks": [
+      "returns BRCA records",
+      "does not confuse breast cancer with NSCLC",
+      "states that BRCA is a comparison dataset for the MVP"
     ]
   }
 ]

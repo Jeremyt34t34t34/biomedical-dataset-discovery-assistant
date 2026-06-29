@@ -158,6 +158,35 @@ The first implementation should stay small and runnable:
 6. Run retrieval evaluation using `eval/questions_seed.json`.
 7. Add a minimal RAG answer layer that only answers from retrieved records.
 
+## Current MVP Prototype
+
+The repository now includes a first runnable retrieval prototype:
+
+- `src/models.py`: normalized `DatasetRecord` and `EvidenceItem` models
+- `src/catalog.py`: seed catalog loading and canonical dataset grouping
+- `src/retriever.py`: simple keyword retriever with query expansion
+- `data/processed/seed_catalog.json`: first curated seed catalog
+- `evaluation/retrieval_eval.py`: retrieval evaluation script
+- `tests/test_retriever.py`: smoke tests for retrieval and grouping behavior
+
+The seed catalog currently includes GDC and cBioPortal source views for:
+
+- `TCGA-LUAD`
+- `TCGA-LUSC`
+- `TCGA-BRCA` as a non-lung comparison dataset
+
+Run retrieval evaluation:
+
+```bash
+PYTHONPATH=. python3 -m evaluation.retrieval_eval
+```
+
+Run tests:
+
+```bash
+PYTHONPATH=. python3 -m unittest discover -s tests
+```
+
 ## Documents
 
 - [Initial Project Investigation](docs/project_investigation.md)
